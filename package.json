@@ -1,0 +1,16 @@
+{
+  "name": "ccat22_project",
+  "version": "1.0.0",
+  "description": "O objetivo deste projeto é desenvolver uma plataforma de trading voltada para a compra e venda de ativos digitais, utilizando criptomoedas como exemplo.",
+  "main": "index.js",
+  "repository": "https://github.com/ostrowskijr/ccat22_project.git",
+  "author": "Luis A Ostrowski Jr",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
