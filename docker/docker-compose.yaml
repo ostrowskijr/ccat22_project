@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: .
+    volumes:
+      - ..:/app
+    ports:
+      - 3030:3030
+    working_dir: /app
+    command: yarn start
+    stop_grace_period: 2s
+  db:
+    image: postgres:14.3
+    ports:
+      - 5432:5432
+    volumes:
+      - ../database/create.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresadmin
+      POSTGRES_DB: app
