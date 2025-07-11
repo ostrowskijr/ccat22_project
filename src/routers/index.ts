@@ -1,12 +1,12 @@
 const Router = require("router");
-import { Request, Response } from "express";
-import { SignupController } from "../modules/signup/controller/signup-controller";
+import { depositRoutes } from "../modules/deposit/deposit-routes";
+import { signupRoutes } from "../modules/signup/signup-routes";
+import { withdrawRoutes } from "../modules/withdraw/withdraw-routes";
 
 const router = Router();
-const signupController = new SignupController();
 
-router.post("/signup", (req: Request, res: Response) =>
-  signupController.signup(req, res)
-);
+router.use(signupRoutes);
+router.use(depositRoutes);
+router.use(withdrawRoutes);
 
 export default router;

@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 export default function startServer() {
   app.get("/", (req: Request, res: Response) => {
     res.status(200).json({
-      message: "Welcome to the CCCAT22 - Rodrigo Branas Terrorista API.",
+      message: "Welcome to the CCCAT22 - API.",
     });
   });
 
