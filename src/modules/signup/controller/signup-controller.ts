@@ -2,10 +2,9 @@ import { Request, Response } from "express";
 import { SignupService } from "../service/signup-service";
 
 export class SignupController {
-
   private readonly signupService: SignupService;
-  constructor() {
-    this.signupService = new SignupService()
+  constructor(signupService?: SignupService) {
+    this.signupService = signupService || new SignupService();
   }
 
   async signup(req: Request, res: Response) {
@@ -15,12 +14,12 @@ export class SignupController {
         email,
         name,
         document,
-        password
+        password,
       });
       return res.status(201).json(data);
     } catch (error: any) {
       return res.status(400).json({
-        error: error.message || "Erro ao criar conta."
+        error: error.message || "Erro ao criar conta.",
       });
     }
   }

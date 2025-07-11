@@ -14,12 +14,12 @@ create table ccca.deposit (
   deposit_id uuid primary key,
   account_id uuid not null references ccca.account(acount_id),
   assetId uuid not null,
-  quantity numeric(10,2) not null,    
+  quantity numeric(10,2) not null
 );
 
 create table ccca.withdraw (
   withdraw_id uuid primary key,
   account_id uuid not null references ccca.account(acount_id),
   assetId uuid not null,
-  quantity numeric(10,2) not null,    
+  quantity numeric(10,2) not null
 );

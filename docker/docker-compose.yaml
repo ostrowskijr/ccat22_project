@@ -4,10 +4,12 @@ services:
       context: .
     volumes:
       - ..:/app
+    env_file:
+      - ../.env
     ports:
       - 3030:3030
     working_dir: /app
-    command: yarn start
+    command: yarn dev
     stop_grace_period: 2s
   db:
     image: postgres:14.3
